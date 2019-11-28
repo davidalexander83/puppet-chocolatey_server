@@ -57,7 +57,6 @@ class chocolatey_server (
   package {'chocolatey.server':
     ensure   => installed,
     provider => chocolatey,
-    source   => $_server_package_url,
   }
 
   # add windows features
