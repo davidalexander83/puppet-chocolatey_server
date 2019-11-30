@@ -33,6 +33,7 @@ class chocolatey_server (
   $port = $::chocolatey_server::params::service_port,
   $server_package_source = $::chocolatey_server::params::server_package_source,
   $server_install_location = $::chocolatey_server::params::server_install_location,
+  $thumbprint = '',
 ) inherits ::chocolatey_server::params {
   require chocolatey
 
@@ -97,6 +98,13 @@ class chocolatey_server (
       {
         'bindinginformation' => '*:80:',
         'protocol'           => 'http'
+      },
+      {
+        'bindinginformation'   => '*:443:',
+        'protocol'             => 'https',
+        'certificatehash'      => $thumbprint,
+        'certificatestorename' => 'MY',
+        'sslflags'             => 1,
       }
     ],
     require         => Package['chocolatey.server'],
