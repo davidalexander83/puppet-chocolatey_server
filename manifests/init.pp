@@ -102,8 +102,6 @@ class chocolatey_server (
       {
         'bindinginformation'   => '*:443:',
         'protocol'             => 'https',
-        'certificatehash'      => $thumbprint,
-        'certificatestorename' => 'MY',
         'sslflags'             => 1,
       }
     ],
