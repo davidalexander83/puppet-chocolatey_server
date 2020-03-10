@@ -96,8 +96,8 @@ class chocolatey_server (
     preloadenabled  => true,
     bindings        =>  [
       {
-        'bindinginformation' => '*:80:',
-        'protocol'           => 'http'
+        'protocol'           => 'http',
+        'bindinginformation' => '*:80:'
       },
       {
         'bindinginformation'   => '*:443:',
