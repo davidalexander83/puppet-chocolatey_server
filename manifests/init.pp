@@ -103,6 +103,8 @@ class chocolatey_server (
         'bindinginformation'   => '*:443:',
         'protocol'             => 'https',
         'sslflags'             => 1,
+        'certificatehash'      => $thumbprint,
+        'certificatestorename' => 'MY'
       }
     ],
     require         => Package['chocolatey.server'],
